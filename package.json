@@ -1,0 +1,25 @@
+{
+  "name": "go",
+  "version": "0.0.1",
+  "description": "CLI tool to setup boilerplates in fast and easy way",
+  "main": "bin/go.js",
+  "bin": {
+    "go": "bin/go.js",
+    "goto": "bin/go.js"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "go",
+    "boilerplate",
+    "template",
+    "cli",
+    "generator"
+  ],
+  "author": "Stanislav Termosa <termosa.stanislav@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "shelljs": "0.7.6"
+  }
+}
