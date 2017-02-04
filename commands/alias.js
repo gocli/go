@@ -8,7 +8,7 @@ function printAliases() {
 
   if (!names.length) fail('No registered aliases');
 
-  console.log('# Aliases list');
+  console.log(' Aliases list');
   names.sort().map(function(name) {
     console.log(name + ': \t' + store[name]);
   });
@@ -17,12 +17,13 @@ function printAliases() {
 
 function printAlias(name) {
   var alias = aliasStore(name);
-  if (!alias) fail('Alias \'' + name + '\' is not found');
-  complete('Aliased with \'' + alias + '\'');
+  if (!alias) fail('Alias "' + name + '" is not found');
+  complete(name + ' is aliased with "' + alias + '"');
 }
 
 function saveAlias(name, alias) {
   aliasStore(name, alias);
+  printAlias(name);
 }
 
 //$ go alias [alias-name [aliased command]]

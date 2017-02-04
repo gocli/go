@@ -10,6 +10,6 @@ module.exports = function(args) {
   console.log('Loading sources...');
   download(repo, dest, function(err) {
     if (err) fail('Can not download repo (' + repo + '): ' + err);
-    complete('You are ready! Check the boilerplate at ' + dest);
+    complete('Code is ready! Check it in the "' + dest + '" directory');
   });
 };
