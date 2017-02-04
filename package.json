@@ -10,6 +10,10 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/termosa/go.git"
+  },
   "keywords": [
     "go",
     "boilerplate",
@@ -19,7 +23,12 @@
   ],
   "author": "Stanislav Termosa <termosa.stanislav@gmail.com>",
   "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/termosa/go/issues"
+  },
+  "homepage": "https://github.com/termosa/go#readme",
   "dependencies": {
+    "download-github-repo": "0.1.3",
     "shelljs": "0.7.6"
   }
 }
