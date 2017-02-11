@@ -29,6 +29,6 @@
   "homepage": "https://github.com/termosa/go#readme",
   "dependencies": {
     "download-github-repo": "0.1.3",
-    "shelljs": "0.7.6"
+    "shelljs": "https://github.com/shelljs/shelljs/tarball/8dd2488"
   }
 }
