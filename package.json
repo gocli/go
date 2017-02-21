@@ -1,6 +1,6 @@
 {
   "name": "go",
-  "version": "0.0.1",
+  "version": "2.0.0",
   "description": "CLI tool to setup boilerplates in fast and easy way",
   "main": "index.js",
   "bin": {
