@@ -1,19 +1,20 @@
 # go <sub><sup><sub>with ease</sub></sup></sub>
 
-CLI tool to use boilerplates in a fast and easy way.
+CLI tool to use online hosted boilerplates in a fast and easy way.
 
 ## Installation
 
-Currently, the package is not available on NPM, so you have to setup it manually. Choose the directory to store **go** files and follow the instruction below.
+The installation is as simple as possible.
 
 ```bash
-$ cd /storage/for/go/package
-$ git clone git@github.com:termosa/go.git ./
-$ npm install
-$ npm link
+$ npm -g install go
 ```
 
-Then you need to reload shell settings. The easiest way is to open a new terminal window.
+Or like in the example below, if you prefer [Yarn](https://yarnpkg.com/).
+
+```bash
+$ yarn global add go
+```
 
 ## Usage
 
