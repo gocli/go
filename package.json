@@ -1,6 +1,6 @@
 {
   "name": "go",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "CLI tool to setup boilerplates in fast and easy way",
   "main": "index.js",
   "bin": {
@@ -29,6 +29,6 @@
   "homepage": "https://github.com/termosa/go#readme",
   "dependencies": {
     "download-github-repo": "0.1.3",
-    "shelljs": "https://github.com/shelljs/shelljs/tarball/8dd2488"
+    "shelljs": "0.7.7"
   }
 }
