@@ -37,7 +37,7 @@ $ go alias
 > wp-theme-html5:  zencoder/html5-boilerplate-for-wordpress
 ```
 
-# Compability with [Go language](https://golang.org/)
+# Compatibility with [Go language](https://golang.org/)
 
 You don't need to worry about the intersection with Go Lang CLI tool. **[go](https://github.com/termosa/go)** will manage that for you in a smart way: whenever you run **go** command in your shell, it will determine if this command is related to the Go Lang, and if it is **go** will forward the execution to it.
 
