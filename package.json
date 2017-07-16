@@ -1,15 +1,8 @@
 {
   "name": "go",
-  "version": "2.0.2",
-  "description": "CLI tool to setup online hosted boilerplates in fast and easy way",
+  "version": "3.0.0",
+  "description": "The tool that help to create and use boilerplates",
   "main": "index.js",
-  "bin": {
-    "go": "bin/go.js",
-    "goto": "bin/go.js"
-  },
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/termosa/go.git"
@@ -18,17 +11,13 @@
     "go",
     "boilerplate",
     "template",
-    "cli",
-    "generator"
+    "generator",
+    "scaffold"
   ],
-  "author": "Stanislav Termosa <termosa.stanislav@gmail.com>",
+  "author": "Stanislav Termosa <termosa.stanislav@gmail.com> (https://github.com/termosa)",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/termosa/go/issues"
   },
-  "homepage": "https://github.com/termosa/go#readme",
-  "dependencies": {
-    "download-github-repo": "0.1.3",
-    "shelljs": "0.7.7"
-  }
+  "homepage": "https://github.com/termosa/go#readme"
 }
