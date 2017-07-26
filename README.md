@@ -1,13 +1,13 @@
 # go <sub><sup><sub>with ease</sub></sup></sub>
 
-The tool that help to create and use boilerplates
+Simple and extensible library to create boilerplate scripts.
+
+See [go-cli](https://www.npmjs.com/package/go-cli) to use boilerplates.
 
 ## Installation
 
-The installation is as simple as possible.
-
 ```bash
-$ npm install -g go
+$ npm install --save-dev go
 ```
 
 ## License
