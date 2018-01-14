@@ -1,6 +1,5 @@
-var Go = require('./lib/go')
+var go = require('./go')()
 var FSPlugin = require('./plugins/fs')
 
-Go.use(FSPlugin)
-
-module.exports = new Go()
+module.exports = go
+  .use(FSPlugin)

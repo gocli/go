@@ -2,8 +2,8 @@ var fs = require('fs')
 var resolvePath = require('path').resolve
 var normalizePath = require('path').normalize
 
-function installFilePlugin (Go) {
-  Go.prototype.copyFile = function (filename, destinationPath) {
+function installFilePlugin (proto) {
+  proto.copyFile = function (filename, destinationPath) {
     return new Promise(function (resolve, reject) {
       fs.readFile(filename, function (err, content) {
         if (err) return reject(err)
@@ -16,7 +16,7 @@ function installFilePlugin (Go) {
     })
   }
 
-  Go.prototype.moveFile = function (filename, destinationPath) {
+  proto.moveFile = function (filename, destinationPath) {
     return new Promise(function (resolve, reject) {
       fs.rename(filename, destinationPath, function (err) {
         if (err) return reject(err)
@@ -25,7 +25,7 @@ function installFilePlugin (Go) {
     })
   }
 
-  Go.prototype.createFile = function (filename, content) {
+  proto.createFile = function (filename, content) {
     return new Promise(function (resolve, reject) {
       fs.writeFile(filename, content, function (err) {
         if (err) return reject(err)
@@ -34,7 +34,7 @@ function installFilePlugin (Go) {
     })
   }
 
-  Go.prototype.removeFile = function (filename) {
+  proto.removeFile = function (filename) {
     return new Promise(function (resolve, reject) {
       fs.unlink(filename, function (err) {
         if (err) return reject(err)
@@ -43,7 +43,7 @@ function installFilePlugin (Go) {
     })
   }
 
-  Go.prototype.createPath = function (path) {
+  proto.createPath = function (path) {
     return new Promise(function (resolve, reject) {
       createPath(normalizePath(path), resolvePath('.'), function (err) {
         if (err) return reject(err)
@@ -52,7 +52,7 @@ function installFilePlugin (Go) {
     })
   }
 
-  Go.prototype.checkIfRealPath = function (filename) {
+  proto.checkIfRealPath = function (filename) {
     return new Promise(function (resolve, reject) {
       fs.stat(filename, function (err, stat) {
         if (err) resolve(false)
