@@ -2,7 +2,7 @@ var fs = require('fs')
 var resolvePath = require('path').resolve
 var normalizePath = require('path').normalize
 
-function installFilePlugin (proto) {
+function installFSPlugin (proto) {
   proto.copyFile = function (filename, destinationPath) {
     return new Promise(function (resolve, reject) {
       fs.readFile(filename, function (err, content) {
@@ -83,4 +83,4 @@ function createPath (path, from, cb) {
   })
 }
 
-module.exports = { install: installFilePlugin }
+module.exports = { install: installFSPlugin }

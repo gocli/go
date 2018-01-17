@@ -19,5 +19,8 @@
   "bugs": {
     "url": "https://github.com/termosa/go/issues"
   },
-  "homepage": "https://github.com/termosa/go#readme"
+  "homepage": "https://github.com/termosa/go#readme",
+  "dependencies": {
+    "enquirer": "1.0.3"
+  }
 }
