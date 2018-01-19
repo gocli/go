@@ -21,6 +21,8 @@
   },
   "homepage": "https://github.com/termosa/go#readme",
   "dependencies": {
-    "enquirer": "1.0.3"
+    "enquirer": "1.0.3",
+    "prompt-confirm": "1.2.0",
+    "prompt-list": "3.1.2"
   }
 }
