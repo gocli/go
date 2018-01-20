@@ -8,11 +8,12 @@
     "url": "git+https://github.com/termosa/go.git"
   },
   "keywords": [
-    "go",
     "boilerplate",
+    "automation",
     "template",
     "generator",
-    "scaffold"
+    "scaffold",
+    "cli"
   ],
   "author": "Stanislav Termosa <termosa.stanislav@gmail.com> (https://github.com/termosa)",
   "license": "MIT",
