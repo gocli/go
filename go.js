@@ -18,6 +18,10 @@ function use (plugin, options) {
   }
 }
 
+function isUsed (plugin) {
+  return matchPlugin(plugin, this)
+}
+
 function matchPlugin (plugin, instance) {
   for (var i = instance._plugins.length; i--;) {
     if (instance._plugins[i] === plugin) return true
@@ -38,5 +42,6 @@ function Go () {
 }
 
 Go.prototype.use = use
+Go.prototype.isUsed = isUsed
 
 module.exports = Go
