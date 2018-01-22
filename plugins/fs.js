@@ -43,26 +43,18 @@ function installFSPlugin (proto) {
     })
   }
 
-  proto.createPath = function (path) {
+  proto.createDir = function (path) {
     return new Promise(function (resolve, reject) {
-      createPath(normalizePath(path), resolvePath('.'), function (err) {
+      createDir(normalizePath(path), function (err) {
         if (err) return reject(err)
         resolve(path)
       })
     })
   }
-
-  proto.checkIfRealPath = function (filename) {
-    return new Promise(function (resolve, reject) {
-      fs.stat(filename, function (err, stat) {
-        if (err) resolve(false)
-        else resolve(true)
-      })
-    })
-  }
 }
 
-function createPath (path, from, cb) {
+function createDir (path, cb) {
+  var from = resolvePath('.')
   var sepIndex = path.indexOf('/')
   if (sepIndex < 0 && !path.length) {
     cb(null, from)
@@ -74,11 +66,11 @@ function createPath (path, from, cb) {
     if (err) {
       fs.mkdir(newFolder, function (err) {
         if (err) return cb(err)
-        createPath(newPath, newFolder, cb)
+        createDir(newPath, newFolder, cb)
       })
     } else {
       if (!stats.isDirectory()) return cb(new Error('Path contains not a directoty'))
-      createPath(newPath, newFolder, cb)
+      createDir(newPath, newFolder, cb)
     }
   })
 }
