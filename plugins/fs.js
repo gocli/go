@@ -1,5 +1,6 @@
 var fs = require('fs')
 var resolvePath = require('path').resolve
+var pathSep = require('path').sep
 var normalizePath = require('path').normalize
 
 function installFSPlugin (proto) {
@@ -45,7 +46,16 @@ function installFSPlugin (proto) {
 
   proto.createDir = function (path) {
     return new Promise(function (resolve, reject) {
-      createDir(normalizePath(path), function (err) {
+      createDir(normalizePath(path), resolvePath('.'), function (err) {
+        if (err) return reject(err)
+        resolve(path)
+      })
+    })
+  }
+
+  proto.removeDir = function (path) {
+    return new Promise(function (resolve, reject) {
+      fs.rmdir(normalizePath(path), function (err) {
         if (err) return reject(err)
         resolve(path)
       })
@@ -53,24 +63,21 @@ function installFSPlugin (proto) {
   }
 }
 
-function createDir (path, cb) {
-  var from = resolvePath('.')
-  var sepIndex = path.indexOf('/')
-  if (sepIndex < 0 && !path.length) {
-    cb(null, from)
-    return
-  }
-  var newFolder = from + path.slice(0, sepIndex)
-  var newPath = path.slice(sepIndex)
-  fs.stat(newFolder, function (err, stats) {
+function createDir (path, from, cb) {
+  if (!path.length) return cb(null, from)
+
+  var sepIndex = path.indexOf(pathSep)
+  var newDir = from + pathSep + (~sepIndex ? path.slice(0, sepIndex) : path)
+  var newPath = ~sepIndex ? path.slice(sepIndex + 1) : ''
+  fs.stat(newDir, function (err, stats) {
     if (err) {
-      fs.mkdir(newFolder, function (err) {
+      fs.mkdir(newDir, function (err) {
         if (err) return cb(err)
-        createDir(newPath, newFolder, cb)
+        createDir(newPath, newDir, cb)
       })
     } else {
       if (!stats.isDirectory()) return cb(new Error('Path contains not a directoty'))
-      createDir(newPath, newFolder, cb)
+      createDir(newPath, newDir, cb)
     }
   })
 }
