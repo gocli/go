@@ -26,6 +26,15 @@ function installFSPlugin (proto) {
     })
   }
 
+  proto.readFile = function (filename) {
+    return new Promise(function (resolve, reject) {
+      fs.readFile(filename, function (err, content) {
+        if (err) return reject(err)
+        resolve(content.toString())
+      })
+    })
+  }
+
   proto.createFile = function (filename, content) {
     return new Promise(function (resolve, reject) {
       fs.writeFile(filename, content, function (err) {
