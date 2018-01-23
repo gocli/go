@@ -31,14 +31,23 @@ function installHandlebarsPlugin (proto) {
         var content = template(context)
 
         if (!path) return Promise.resolve(content)
-        return proto.createFile(path, content)
+        return proto.writeFile(path, content)
           .then(function () { return content })
       }
     }
 
-    return proto.readFile(templateDir + sep + templateName)
-      .then(createTemplate)
+    return readTemplate(templateDir + sep + templateName)
       .then(createRenderFunction)
+  }
+
+  proto.processTemplate = function processTemplate (path, context) {
+    return readTemplate(path)
+      .then(function (template) {
+        return template(context)
+      })
+      .then(function (content) {
+        return proto.writeFile(path, content)
+      })
   }
 
   proto.registerTemplatePartial = function registerTemplatePartial (name, template) {
@@ -48,10 +57,13 @@ function installHandlebarsPlugin (proto) {
   proto.registerTemplateHelper = function registerTemplateHelper (name, renderFn) {
     Handlebars.registerHelper(name, renderFn.bind(Handlebars))
   }
-}
 
-function createTemplate (templateContent) {
-  return Handlebars.compile(templateContent)
+  function readTemplate (path) {
+    return proto.readFile(path)
+      .then(function(templateContent) {
+        return Handlebars.compile(templateContent)
+      })
+  }
 }
 
 module.exports = { install: installHandlebarsPlugin }

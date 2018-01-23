@@ -35,7 +35,7 @@ function installFSPlugin (proto) {
     })
   }
 
-  proto.createFile = function (filename, content) {
+  proto.writeFile = function (filename, content) {
     return new Promise(function (resolve, reject) {
       fs.writeFile(filename, content, function (err) {
         if (err) return reject(err)
