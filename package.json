@@ -1,6 +1,6 @@
 {
   "name": "go",
-  "version": "3.0.0-rc.2",
+  "version": "3.0.0-rc.3",
   "description": "The tool that help to create and use boilerplates",
   "main": "index.js",
   "repository": {
@@ -26,7 +26,7 @@
   "homepage": "https://github.com/termosa/go#readme",
   "dependencies": {
     "enquirer": "1.0.3",
-    "go-cli": "1.0.0-rc.0",
+    "go-cli": "^1.0.0-rc.1",
     "handlebars": "4.0.11",
     "prompt-confirm": "1.2.0",
     "prompt-list": "3.1.2"
