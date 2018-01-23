@@ -1,6 +1,6 @@
 {
   "name": "go",
-  "version": "3.0.0-rc.1",
+  "version": "3.0.0-rc.2",
   "description": "The tool that help to create and use boilerplates",
   "main": "index.js",
   "repository": {

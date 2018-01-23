@@ -3,7 +3,7 @@ var enquirer = new Enquirer()
 enquirer.register('confirm', require('prompt-confirm'))
 enquirer.register('list', require('prompt-list'))
 
-function uid () { return (uid.id || 0) + 1 }
+function uid () { return uid.id = (uid.id || 0) + 1 }
 
 function chainQuestions (questions, answers) {
   questions = questions || []
