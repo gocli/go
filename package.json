@@ -1,6 +1,6 @@
 {
   "name": "go",
-  "version": "3.0.0-rc.0",
+  "version": "3.0.0-rc.1",
   "description": "The tool that help to create and use boilerplates",
   "main": "index.js",
   "repository": {
@@ -17,12 +17,16 @@
   ],
   "author": "Stanislav Termosa <termosa.stanislav@gmail.com> (https://github.com/termosa)",
   "license": "MIT",
+  "bin": {
+    "go": "bin/cli.js"
+  },
   "bugs": {
     "url": "https://github.com/termosa/go/issues"
   },
   "homepage": "https://github.com/termosa/go#readme",
   "dependencies": {
     "enquirer": "1.0.3",
+    "go-cli": "1.0.0-rc.0",
     "prompt-confirm": "1.2.0",
     "prompt-list": "3.1.2"
   }
