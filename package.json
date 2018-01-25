@@ -5,7 +5,7 @@
   "main": "index.js",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/termosa/go.git"
+    "url": "git+https://github.com/gocli/go.git"
   },
   "keywords": [
     "boilerplate",
@@ -21,9 +21,9 @@
     "go": "bin/cli.js"
   },
   "bugs": {
-    "url": "https://github.com/termosa/go/issues"
+    "url": "https://github.com/gocli/go/issues"
   },
-  "homepage": "https://github.com/termosa/go#readme",
+  "homepage": "https://github.com/gocli/go#readme",
   "dependencies": {
     "enquirer": "1.0.3",
     "go-cli": "^1.0.0-rc.1",
