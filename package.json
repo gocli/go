@@ -1,7 +1,7 @@
 {
   "name": "go",
   "version": "3.0.0-rc.3",
-  "description": "The tool that help to create and use boilerplates",
+  "description": "Create and use boilerplates with ease",
   "main": "index.js",
   "repository": {
     "type": "git",
@@ -27,6 +27,7 @@
   "dependencies": {
     "enquirer": "1.0.3",
     "go-cli": "^1.0.0-rc.1",
+    "go-plugin-fs": "^1.0.0",
     "handlebars": "4.0.11",
     "prompt-confirm": "1.2.0",
     "prompt-list": "3.1.2"

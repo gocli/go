@@ -1,5 +1,5 @@
 var Handlebars = require('handlebars')
-var fsPlugin = require('./fs')
+var fsPlugin = require('go-plugin-fs')
 var sep = require('path').sep
 var DEFAULT_TEMPLATE_DIR = '.templates'
 
