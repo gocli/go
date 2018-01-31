@@ -1,6 +1,6 @@
 {
   "name": "go",
-  "version": "3.0.0-rc.4",
+  "version": "3.0.0-rc.5",
   "description": "Create and use boilerplates with ease",
   "main": "index.js",
   "repository": {
@@ -26,6 +26,7 @@
   "homepage": "https://github.com/gocli/go#readme",
   "dependencies": {
     "go-cli": "^1.0.0-rc.1",
+    "go-plugin-cli": "^1.0.0",
     "go-plugin-fs": "^1.0.0",
     "go-plugin-handlebars": "^1.0.0",
     "go-plugin-quiz": "^2.0.0"
