@@ -3,6 +3,17 @@
   "version": "3.0.0-rc.5",
   "description": "Create and use boilerplates with ease",
   "main": "index.js",
+  "scripts": {
+    "lint": "standard -v | snazzy",
+    "unit": "jest --coverage",
+    "unit:watch": "jest --coverage --watchAll",
+    "coverage": "npm run unit; opn coverage/lcov-report/index.html",
+    "test": "npm run lint && npm run unit",
+    "prepublishOnly": "npm run test"
+  },
+  "engines": {
+    "node": ">=6.4.0"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/gocli/go.git"
@@ -24,11 +35,25 @@
     "url": "https://github.com/gocli/go/issues"
   },
   "homepage": "https://github.com/gocli/go#readme",
+  "devDependencies": {
+    "jest": "^22.4.2",
+    "opn-cli": "^3.1.0",
+    "snazzy": "^7.1.1",
+    "standard": "^11.0.0"
+  },
   "dependencies": {
     "go-cli": "^1.0.0-rc.1",
     "go-plugin-cli": "^1.0.0",
     "go-plugin-fs": "^1.0.0",
     "go-plugin-handlebars": "^1.0.0",
     "go-plugin-quiz": "^2.0.0"
+  },
+  "standard": {
+    "globals": [
+      "describe",
+      "expect",
+      "it",
+      "jest"
+    ]
   }
 }

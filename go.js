@@ -1,16 +1,16 @@
-function use (plugin, options) {
+function use (plugin, options = {}) {
   if (this instanceof Go) {
     if (matchPlugin(plugin, this)) return this
 
     if (plugin && typeof plugin.install === 'function') {
       plugin.install(this, options)
+      this._plugins.push(plugin.install)
     } else if (typeof plugin === 'function') {
-      plugin.call(null, this, options)
+      plugin(this, options)
+      this._plugins.push(plugin)
     } else {
       throw new ReferenceError('\'plugin\' must be a function or an object with install method')
     }
-
-    this._plugins.push(plugin)
 
     return this
   } else {
@@ -19,22 +19,29 @@ function use (plugin, options) {
 }
 
 function isUsed (plugin) {
-  return matchPlugin(plugin, this)
+  if (this instanceof Go) {
+    if (plugin && typeof plugin.install === 'function') {
+      plugin = plugin.install
+    }
+    return matchPlugin(plugin, this)
+  } else {
+    throw new ReferenceError('isUsed() should be called on instance of Go')
+  }
 }
 
 function matchPlugin (plugin, instance) {
-  for (var i = instance._plugins.length; i--;) {
+  for (let i = instance._plugins.length; i--;) {
     if (instance._plugins[i] === plugin) return true
   }
   return false
 }
 
-var shouldCreateRealInstance = false
+let shouldCreateRealInstance = false
 
 function Go () {
   if (!shouldCreateRealInstance) {
     shouldCreateRealInstance = true
-    var go = new Go
+    const go = new Go()
     shouldCreateRealInstance = false
     return go
   }

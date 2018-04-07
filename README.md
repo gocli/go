@@ -1,4 +1,4 @@
-# go <sub><sup><sub>with ease</sub></sup></sub> <sub><sup><sub>[![npm](https://img.shields.io/npm/v/go.svg?style=flat-square)](https://www.npmjs.com/package/go)</sub></sup></sub>
+# go [![npm](https://img.shields.io/npm/v/go.svg?style=flat-square)](https://www.npmjs.com/package/go) [![js-standard-style](https://img.shields.io/badge/code%20style-standard-green.svg?style=flat-square)](https://github.com/gocli/go) [![Travis](https://img.shields.io/travis/gocli/go.svg?style=flat-square)](https://travis-ci.org/gocli/go)
 
 Go is the toolset to manage boilerplates with less effort.
 
