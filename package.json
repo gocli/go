@@ -4,12 +4,15 @@
   "description": "Create and use boilerplates with ease",
   "main": "index.js",
   "scripts": {
-    "lint": "standard -v | snazzy",
-    "unit": "jest --coverage",
-    "unit:watch": "jest --coverage --watchAll",
+    "ci": "npm run lint:ci && npm run unit:ci",
     "coverage": "npm run unit; opn coverage/lcov-report/index.html",
+    "lint": "standard -v | snazzy",
+    "lint:ci": "standard",
+    "prepublishOnly": "npm run test",
     "test": "npm run lint && npm run unit",
-    "prepublishOnly": "npm run test"
+    "unit": "jest --coverage",
+    "unit:ci": "jest --coverage --coverageReporters=text-lcov | coveralls",
+    "unit:watch": "jest --coverage --watchAll"
   },
   "engines": {
     "node": ">=6.4.0"
@@ -36,6 +39,7 @@
   },
   "homepage": "https://github.com/gocli/go#readme",
   "devDependencies": {
+    "coveralls": "^3.0.2",
     "jest": "^22.4.2",
     "opn-cli": "^3.1.0",
     "snazzy": "^7.1.1",
