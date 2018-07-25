@@ -36,7 +36,7 @@ Several plugins are bundled with Go:
 - [go-plugin-cli](https://www.npmjs.com/package/go-plugin-cli) - register and execute commands.
 - [go-plugin-fs](https://www.npmjs.com/package/go-plugin-fs) - work with files and folders
 - [go-plugin-quiz](https://www.npmjs.com/package/go-plugin-quiz) - collect user input
-- [go-plugin-handlebars](https://www.npmjs.com/package/go-plugin-handlebars) - process templates
+- [go-plugin-templates](https://www.npmjs.com/package/go-plugin-templates) - render templates
 
 ## CLI tool
 

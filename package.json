@@ -49,7 +49,7 @@
     "go-cli": "^1.0.0-rc.1",
     "go-plugin-cli": "^1.0.0",
     "go-plugin-fs": "^1.0.0",
-    "go-plugin-handlebars": "^1.0.0",
+    "go-plugin-templates": "^0.0.0",
     "go-plugin-quiz": "^2.0.0"
   },
   "standard": {
