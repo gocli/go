@@ -10,12 +10,39 @@ Go is the toolset to manage boilerplates with less effort.
 
 ## Usage
 
+Go can be used in 2 ways:
+
+### Load and install boilerplate
+
 ```bash
 $ npm install --global go
 $ go git git@github.com:gocli/boilerplate-example.git
 ```
 
 To create and use your own boilerplates, refer to [documentation](http://gocli.io) or check the list of [community driven boilerplates](http://gocli.io/boilerplates).
+
+### Run local commands
+
+```bash
+$ cd project/with/gofile/
+$ go run some command
+```
+
+This will call the command registered in **gofile.js**.
+Take a time to read how to [create your own gofile.js](http://gocli.io/#gofile).
+
+#### Interactive menu
+
+You can also execute **go** with no arguments and that will call an interactive menu with the list of all available commands:
+
+```bash
+$ go
+[GO] Choose command:
+❯ build
+  deploy
+  generate
+  install
+```
 
 ## Go Lang
 
