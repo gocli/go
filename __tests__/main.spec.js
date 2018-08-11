@@ -4,12 +4,11 @@ describe('main', () => {
   it('is exports an object', () => {
     expect(typeof go).toBe('object')
 
-    expect(go).toHaveProperty('validateCommand')
+    expect(go).toHaveProperty('getCommands')
+    expect(go).toHaveProperty('matchCommand')
     expect(go).toHaveProperty('executeCommand')
     expect(go).toHaveProperty('registerCommand')
-    expect(go).toHaveProperty('unregisterCommand')
 
-    expect(go).toHaveProperty('fs')
     expect(go).toHaveProperty('fs')
     expect(go).toHaveProperty('copy')
     expect(go).toHaveProperty('copySync')
@@ -24,17 +23,15 @@ describe('main', () => {
     expect(go).toHaveProperty('createDir')
     expect(go).toHaveProperty('createDirSync')
 
-    expect(go).toHaveProperty('enquirer')
+    expect(go).toHaveProperty('inquirer')
     expect(go).toHaveProperty('ask')
     expect(go).toHaveProperty('confirm')
     expect(go).toHaveProperty('registerQuestion')
 
-    expect(go).toHaveProperty('setTemplateDir')
-    expect(go).toHaveProperty('getTemplateDir')
-    expect(go).toHaveProperty('loadTemplate')
-    expect(go).toHaveProperty('processTemplate')
+    expect(go).toHaveProperty('createTemplate')
+    expect(go).toHaveProperty('loadTemplates')
+    expect(go).toHaveProperty('loadTemplates.sync')
     expect(go).toHaveProperty('processTemplates')
-    expect(go).toHaveProperty('registerTemplatePartial')
-    expect(go).toHaveProperty('registerTemplateHelper')
+    expect(go).toHaveProperty('processTemplates.sync')
   })
 })

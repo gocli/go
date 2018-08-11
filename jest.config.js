@@ -1,6 +1,7 @@
 module.exports = {
   verbose: true,
   testRegex: '(/__tests__/.*(\\.|/)(test|spec))\\.js$',
+  testURL: 'http://localhost',
   collectCoverageFrom: ['index.js', 'go.js'],
   coverageThreshold: {
     global: {
