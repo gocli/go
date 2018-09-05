@@ -48,11 +48,12 @@ describe('Go instance', () => {
     expect(go.isUsed({ install: plugin })).toBeTruthy()
   })
 
-  it('throws if methods are called not on Go instance', () => {
+  it('works if methods are called not on Go instance', () => {
     const go = Go()
+    const plugin = jest.fn()
 
-    expect(() => go.use.call(null)).toThrowError('should be called on instance of Go')
-    expect(() => go.isUsed.call(null)).toThrowError('should be called on instance of Go')
+    go.use.call(null, plugin)
+    expect(go.isUsed.call(null, plugin)).toBeTruthy()
   })
 
   it('throws if plugin is not a function or does not have install function', () => {
