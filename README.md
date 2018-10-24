@@ -5,6 +5,7 @@
 [![Coveralls](https://img.shields.io/coveralls/github/gocli/go.svg?style=flat-square)](https://coveralls.io/github/gocli/go)
 [![Vulnerabilities](https://snyk.io/test/github/gocli/go/badge.svg?style=flat-square)](https://snyk.io/test/github/gocli/go)
 [![js-standard-style](https://img.shields.io/badge/code%20style-standard-green.svg?style=flat-square)](https://github.com/gocli/go)
+[![Waffle](https://badge.waffle.io/gocli/go.svg?columns=In%20progress,Backlog&style=flat-square)](https://waffle.io/gocli/go)
 
 Go is the toolset to manage boilerplates with less effort.
 
