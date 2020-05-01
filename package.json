@@ -12,7 +12,9 @@
     "test": "npm run lint && npm run unit",
     "unit": "jest --coverage",
     "unit:ci": "jest --coverage --coverageReporters=text-lcov | coveralls",
-    "unit:watch": "jest --coverage --watchAll"
+    "unit:watch": "jest --coverage --watchAll",
+    "snyk-protect": "snyk protect",
+    "prepare": "npm run snyk-protect"
   },
   "engines": {
     "node": ">=6.4.0"
@@ -55,7 +57,8 @@
     "go-plugin-cli": "^2.0.0",
     "go-plugin-fs": "^1.0.2",
     "go-plugin-quiz": "^4.0.0",
-    "go-plugin-templates": "^1.0.0"
+    "go-plugin-templates": "^1.0.0",
+    "snyk": "^1.316.1"
   },
   "standard": {
     "globals": [
@@ -64,5 +67,6 @@
       "it",
       "jest"
     ]
-  }
+  },
+  "snyk": true
 }
